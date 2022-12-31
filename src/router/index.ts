@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 
 // Array<RouteRecordRaw> routes 路由信息类型
@@ -25,11 +25,14 @@ const router = createRouter({
      * 改变 URL 中的 hash 部分不会引起页面刷新
      *  通过 hashchange 事件监听URL 中的变化, 改变URL的方式只有这几种
      *  1. 通过浏览器前进后退改变URL
+     *  window.addEventListener('hashchange', (e) => {
+     *      console.log(e)
+     *  })
      *  2. 通过<a>标签改变URL
-     *  3. 通过window.location 改变 URL
+     *  3. 通过window.location 改变URL location.hash = '/'
      */
     // vue2 mode abstact vue3createMemoryHistory()
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     // 路由信息
     routes,
 })
